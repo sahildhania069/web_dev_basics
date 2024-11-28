@@ -1,0 +1,243 @@
+Include external CSS file: The external CSS file is linked to the HTML document using a link tag.
+
+<!-- <link rel="stylesheet" type="text/css" href="/style.css" /> -->
+
+Internal CSS or Embedded: CSS is embedded within the HTML file using a style HTML tag.
+<!-- 
+<style type="text/css">
+div { color: #444;}
+</style> -->
+
+Inline CSS: It contains CSS properties in the body section specified within HTML tags.
+
+<!-- <tag style="property: value"> </tag> --> -->
+
+
+Clearfix: It clears floats to select or control margins and padding.
+Why is Clearfix Needed?
+    -When elements are floated (using float: left or float: right), they are removed from the normal document flow.
+    If the parent element has no other non-floated children, it collapses to zero height, as it doesn't recognize the floated elements.
+    Clearfix prevents this issue by forcing the parent to recognize and contain its floated children.
+
+<!-- .clearfix::after {
+    content: "";
+    clear: both;
+    display: block; 
+} -->
+
+<!-- 
+<div class="clearfix" style="border:1px solid black">
+    <div style="float: left; width: 50%; border:1px solid black">Floated Left</div>
+    <div style="float: right; width: 50%;border:1px solid black">Floated Right</div>
+  </div>
+  <div style=" color: red">
+    Color property used here
+  </div>
+  </br>
+  <div style=" text-align: center">
+    Text align property used here
+  </div>
+  </br>
+  <div style=" text-decoration: underline">
+    Text decoration property used here
+  </div>
+  </br>
+  <div style="text-transform: lowercase">
+    Text transform property used here
+  </div>
+  </br>
+  <div style="text-indent: 80px">
+    Text indent property used here
+  </div>
+  </br>
+  <div style=" letter-spacing: 4px">
+    Text line spacing property used here
+  </div>
+  </br>
+  <div style="line-height: 40px">
+    Text line height property used here
+  </div>
+  </br>
+  <div style="text-shadow: 3px 1px 5px blue;">
+    This text has a blurred shadow!
+  </div>
+  </br>
+  <div style="word-spacing: 15px;">
+    Text word spacing property used here
+  </div> -->
+
+
+
+
+  <!-- Background -->
+  <!-- .a { -->
+    <!-- background-image: -->
+      <!-- url("https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190417124305/250.png"); -->
+  <!-- } -->
+  <!--  -->
+  <!-- .b { -->
+    <!-- background-image: -->
+      <!-- url("https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190417124305/250.png"); -->
+    <!-- background-repeat: no-repeat; -->
+  <!-- } -->
+  <!--  -->
+  <!-- .c { -->
+    <!-- background-image: -->
+      <!-- url("https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190417124305/250.png"); -->
+    <!-- background-repeat: no-repeat; -->
+    <!-- background-position: center; -->
+  <!-- } -->
+  <!--  -->
+  <!-- .d { -->
+    <!-- background-image: -->
+      <!-- url('https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png'); -->
+    <!-- background-repeat: no-repeat; -->
+    <!-- background-origin: initial; -->
+  <!-- } -->
+  <!--  -->
+  <!-- .e { -->
+    <!-- background-image: -->
+      <!-- url("https://media.geeksforgeeks.org/wp-content/uploads/geeks-25.png"); -->
+    <!-- background-position: center; -->
+    <!-- background-repeat: no-repeat; -->
+    <!-- background-attachment: fixed; -->
+  <!-- } -->
+
+
+  <!-- .gfg1 {
+    border: 1px solid;
+    padding: 10px;
+    /* box-shadow: h-offset v-offset blur */
+    box-shadow: 5px 10px 10px;
+  }
+  
+  /* text-shadow: h-shadow v-shadow 
+   blur-radius color */
+  h2 {
+    text-shadow: 5px 5px 8px #00FF00;
+  } -->
+
+
+<!-- Change Cursor -->
+  <!-- .wait {
+    cursor: wait;
+  } -->
+
+
+
+
+
+<!-- BOOTSTRAP-------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- On tables -->
+<!-- <table class="table-primary">...</table>
+<table class="table-secondary">...</table>
+<table class="table-success">...</table>
+<table class="table-danger">...</table>
+<table class="table-warning">...</table>
+<table class="table-info">...</table>
+<table class="table-light">...</table>
+<table class="table-dark">...</table> -->
+
+<!-- On rows -->
+<!-- <tr class="table-primary">...</tr>
+<tr class="table-secondary">...</tr>
+<tr class="table-success">...</tr>
+<tr class="table-danger">...</tr>
+<tr class="table-warning">...</tr>
+<tr class="table-info">...</tr>
+<tr class="table-light">...</tr>
+<tr class="table-dark">...</tr> -->
+
+<!-- On cells (`td` or `th`) -->
+<!-- <tr>
+  <td class="table-primary">...</td>
+  <td class="table-secondary">...</td>
+  <td class="table-success">...</td>
+  <td class="table-danger">...</td>
+  <td class="table-warning">...</td>
+  <td class="table-info">...</td>
+  <td class="table-light">...</td>
+  <td class="table-dark">...</td>
+</tr> -->
+
+
+<!-- <table class="table table-striped"></table> -->
+<!-- <table class="table table-dark table-striped"> -->
+<!-- <table class="table table-success table-striped"> -->
+<!-- <table class="table table-hover"></table> -->
+
+
+<!-- <table class="table caption-top">
+  <caption>List of users</caption> -->
+
+<!-- 
+  <div class="table-responsive">
+    <table class="table"> -->
+
+
+
+<!-- -------------------------------------------------------A LOGIN FORM-------------------------- -->
+<!-- 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head> -->
+
+<!-- <body class="bg-black">
+  <div class="container">
+    <div class="row justify-content-center" style="margin-top: 20%;">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+        <div class="rounded-3 border border-1 border-primary rounded text-center p-4" style="background-color:#edeff0;">
+          <form action="#">
+            <fieldset>
+              <legend class="mb-3 display-6 mt-2" style="margin-top: -3%; font-family: Oswald;   color: #0e9deb;">Login
+              </legend>
+              <input type="text" placeholder="Enter your Firstname" name="firstname" class="form-control rounded-2 py-2" />
+              <br>
+              <input type="email" placeholder="Enter your Email" name="email" class="form-control rounded-2 py-2"/>
+              <br>
+              <input class="btn btn-primary w-100 rounded-3 py-2" type="submit" name="submit" value="Login"/>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body> -->
