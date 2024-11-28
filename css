@@ -10,7 +10,7 @@ div { color: #444;}
 
 Inline CSS: It contains CSS properties in the body section specified within HTML tags.
 
-<!-- <tag style="property: value"> </tag> --> -->
+<!-- <tag style="property: value"> </tag> --> 
 
 
 Clearfix: It clears floats to select or control margins and padding.
@@ -127,7 +127,7 @@ Why is Clearfix Needed?
 
 
 
-<!-- BOOTSTRAP-------------------------------------------------------------------------------------------------------------------------- -->
+BOOTSTRAP--------------------------------------------------------------------------------------------------------------------------
 
 <!-- <table class="table">
   <thead>
@@ -207,7 +207,7 @@ Why is Clearfix Needed?
 
 
 
-<!-- -------------------------------------------------------A LOGIN FORM-------------------------- -->
+-------------------------------------------------------A LOGIN FORM--------------------------
 <!-- 
 <head>
   <meta charset="utf-8">
@@ -241,3 +241,38 @@ Why is Clearfix Needed?
   </div>
   <script src="script.js"></script>
 </body> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------TAILWIND LOGIN FORM
+<!-- <div class="grid place-items-center bg-gradient-to-r from-cyan-500 to-blue-500 h-screen">
+  <form action="#" class="text-center w-full max-w-sm sm:max-w-sm md:max-w-md lg:max-w-lg shadow-lg rounded-xl bg-white duration-500 ">
+    <legend class="text-xl my-2 mb-4 bg-white text-blue-400 font-semibold">Login</legend>
+    <input class="border w-[80%] max-w-sm sm:max-w-md lg:max-w-lg rounded-sm bg-gray-100 hover:rounded-md transform hover:scale-105 duration-500 focus:text-blue-300" type="text" name="fname" placeholder="Enter your Firstname" />
+    <br />
+    <input class="mt-2 mb-3 border w-[80%] max-w-sm sm:max-w-md lg:max-w-lg rounded-sm bg-gray-100 hover:rounded-md transform hover:scale-105 duration-500" type="email" name="email" placeholder="Enter your Email" />
+    <br />
+    <input class="uppercase tracking-widest text-black mb-4 w-[80%] border-2 rounded-xl hover:bg-white hover:opacity-80 duration-500  hover:text-blue-600 hover:rounded-md transform hover:scale-105 hover:shadow-md" type="reset" name="submit" value="Login" />
+  </form>
+</div> -->
+
+
+
+<!-- Good Command -->
+<!-- transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110: Moves and enlarges the element on hover.
+animate-bounce: Adds a bounce animation to elements like buttons.
+animate-spin: Spins the element in a circular motion.
+animate-pulse: Creates a subtle pulsing effect, often used for loading indicators. -->
+
+<!-- blur-sm -->
+ 
