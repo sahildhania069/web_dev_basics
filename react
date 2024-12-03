@@ -1,0 +1,118 @@
+ToDo- 
+in the input field, the value should be a text state, and on changes,, the events should be written to the text, 
+then on button click you run a function for creating a new task,, don't directly update the existing task array, use the spread operator [...task, text]
+
+then using the ul tag, map through tasks while also giving the li tag an index
+
+
+const Todo = () => {
+    const [task,setTask]=useState([])
+    const [text, setText]= useState('')
+
+    function NewTask(){
+        if(text.trim()!==''){
+            setTask([...task,text])
+            setText('')
+        }
+    }
+
+    function RemoveTask(index){
+        const newList= task.filter((_,i)=> i !=index)
+        setTask(newList)
+    }
+
+    return (
+        <>
+            <div>
+                <h1 className='text-xl'>To Do</h1>
+                <br/>
+                <input className="mr-3" type='text' value={text} onChange={(e)=> setText(e.target.value)} placeholder='Enter a new task'/><button onClick={NewTask}>Add</button>
+                <br/>
+                <ul>
+                    {task.map((task,index)=>(<><li key={index}>{task}<button className='ml-3' onClick={()=>RemoveTask(index)}>X</button></li></>))}
+                </ul>
+            </div>
+        </>
+    )
+    
+}
+
+export default Todo
+
+
+
+
+
+
+
+Conditional Rendering in Login Form
+
+import { useState } from 'react'
+import React from 'react'
+import Navbar from './Navbar'
+
+const Login = () => {
+    const [login, setLogin] = useState(false)
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+
+    function HandleSubmit(e) {
+        e.preventDefault()
+        let userData=JSON.parse(localStorage.getItem(username))
+        if (userData && userData.email) {
+            setLogin(true)
+        }
+        else {
+            alert('Invalid Username or Email')
+            setLogin(false)
+        }
+    }
+
+    function handleReset() {
+        setLogin(false)
+    }
+
+    function SetUser(){
+        if(username.trim && email.trim && !localStorage.getItem(username)){
+            let user={
+                'username':username,
+                'email':email
+            }
+            localStorage.setItem(username,JSON.stringify(user))
+            alert('SignUp Success')
+        }
+        else{
+            alert('Invalid Input or User Already Exists')
+        }
+    }
+
+    return (
+        <>
+            <link href="output.css" rel='stylesheet' />
+            <div>
+                {!login ?
+                    (<div className='border-2 border-gray-400 rounded-md inline-block px-4 mt-[15%]'>
+                        <h1 className="text-2xl mt-2">LOGIN</h1>
+                        <br />
+                        <form className='mb-4' onSubmit={HandleSubmit}>
+                            <input className="text-xl mb-3 rounded-md" type='text' placeholder='Enter Your Firstname' onChange={(e) => setUsername(e.target.value)} />
+                            <br />
+                            <input className="text-xl mb-3 rounded-md" type='email' placeholder='Enter Your Email' onChange={(e) => setEmail(e.target.value)} />
+                            <br />
+                            <input className="w-[50%] border-2 rounded-md" type='submit' value="Login" name="submit" />
+                            <input className='w-[50%] border-2 rounded-md' onClick={SetUser} type="button" value="Sign Up" name='signup'/>
+                        </form>
+                    </div>
+                    ) :
+                    <>
+                        <Navbar name={username} />
+                        <input className='border-2 rounded-md' type='reset' value="Logout" onClick={handleReset} />
+                    </>
+                }
+            </div>
+        </>
+    )
+}
+
+export default Login
+
