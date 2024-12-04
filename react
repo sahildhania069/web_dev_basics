@@ -44,7 +44,6 @@ export default Todo
 
 
 
-
 Conditional Rendering in Login Form
 
 import { useState } from 'react'
@@ -116,3 +115,86 @@ const Login = () => {
 
 export default Login
 
+
+
+
+
+
+
+
+
+
+
+
+
+// ----------------------------------------------------------MODIFIED TODO TO INCLUDE USER SPECIFIC TASKS------------------
+import React, {useState, useEffect,useRef} from 'react'
+
+const Todo = ({username}) => {
+    const [task,setTask]=useState([])
+    const [text, setText]= useState('')
+    const isInitialLoad = useRef(true)
+
+    // Get previous tasks
+    useEffect(()=>{
+        try {
+            // Get all the tasks from the JSON Object with 'tasks' key 
+            const userTasks = JSON.parse(localStorage.getItem('tasks')) || {};
+            // The list of tasks with the key username are set to the currently shown task list
+            setTask(userTasks[username] || []);
+        } catch (error) {
+            console.error('Error parsing tasks from localStorage:', error);
+            setTask([]);
+        }
+        // is updated whenever username is updated
+    }, [username]);
+
+    // Save New Tasks to local storage
+    useEffect(()=>{
+        // To prevent the first render to be saved to the local storage,, since the first render would be empty
+       if(isInitialLoad.current){
+            isInitialLoad.current= false
+       }
+       else{
+            try {
+                // Gets all the tasks just like above
+                const userTasks = JSON.parse(localStorage.getItem('tasks')) || {};
+                // Set all the tasks to the user
+                userTasks[username] = task;
+                // set the tasks into local storage
+                localStorage.setItem('tasks', JSON.stringify(userTasks));
+            } catch (error) {
+                console.error('Error saving tasks to localStorage:', error);
+        }
+       }
+    }, [task, username]);
+
+    function NewTask(){
+        if(text.trim()!==''){
+            setTask([...task,text])
+            setText('')
+        }
+    }
+
+    function RemoveTask(index){
+        const newList= task.filter((_,i)=> i !=index)
+        setTask(newList)
+    }
+
+    return (
+        <>
+            <div>
+                <h1 className='text-xl'>To Do</h1>
+                <br/>
+                <input className="mr-4" type='text' value={text} onChange={(e)=> setText(e.target.value)} placeholder='Enter a new task'/><button onClick={NewTask}>Add</button>
+                <br/>
+                <ul>
+                    {task.map((task,index)=>(<><li key={index}>{task}<button className='ml-3' onClick={()=>RemoveTask(index)}>X</button></li></>))}
+                </ul>
+            </div>
+        </>
+    )
+    
+}
+
+export default Todo
